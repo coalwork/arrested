@@ -6,11 +6,14 @@
     <script>
       function open() {
         const element = document.createElement('p');
+        const element2 = document.createElement('p');
         const button = document.getElementById('present');
         element.id = 'glowing';
         element.innerText = 'You\'re gay!';
+        element2.innerHTML = 'Please contact <b>Nicholas P. Kanter</b> for more information in joining the <b>Gay Club</b>.'
 
         document.body.insertBefore(element, button);
+        document.body.append(element2);
         button.remove();
       }
 
@@ -27,6 +30,10 @@
 
       h1 {
         color: #FFFC;
+      }
+
+      p {
+        color: white;
       }
 
       #glowing {
