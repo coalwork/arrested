@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Congratulations!</title>
+    <script>
+      function open() {
+        const element = document.createElement('p');
+        const button = document.getElementById('present');
+        element.id = 'glowing';
+        element.innerText = 'You\'re gay!';
+
+        document.body.insertBefore(element, button);
+        button.remove();
+      }
+
+      addEventListener('DOMContentLoaded', () => {
+        document.getElementById('present').addEventListener('click', open);
+      });
+    </script>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      h1 {
+        color: #FFFC;
+      }
+
+      #glowing {
+        color: #FFFC;
+        font-weight: bolder;
+        font-size: 4em;
+        animation-name: glowing;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        background: rgb(0,255,68);
+        background: linear-gradient(135deg, rgba(0,255,68,1) 0%, rgba(0,164,255,1) 100%);
+      }
+
+      button {
+        cursor: pointer;
+        color: white;
+        background-color: #0008;
+        border: none;
+        font-size: inherit;
+        font-family: inherit;
+        border-radius: 5px;
+        padding: 13px 20px;
+      }
+
+      @keyframes glowing {
+        0% {
+          text-shadow: 0 2px 15px #0000;
+        }
+        100% {
+          text-shadow: 0 2px 15px #FFFF;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>We have a special present for you.</h1>
+    <button id="present">Click me to open!</button>
+  </body>
+</html>
